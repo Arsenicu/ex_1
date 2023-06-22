@@ -1,0 +1,5 @@
+orjson==3.9.1
+pandas==2.0.2
+rapidgzip==0.7.0
+SQLAlchemy==2.0.16
+tqdm==4.65.0
