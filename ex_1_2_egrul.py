@@ -74,13 +74,14 @@ class company(hw1):
     okved_code= Column(String)
  
 """
-    first init database, drop table, if exist
+    drop everything, if exist, init database, 
     read all company records from Queue and write it's to databes every 1 second
 """
 def read_pool(records_queue, counter_db, read_done, lock):
     try:
         engine=create_engine("sqlite:///hw1.db")
-        company.__table__.drop(bind=engine)
+        #company.__table__.drop(bind=engine)
+        hw1.metadata.drop_all(bind=engine)
         hw1.metadata.create_all(bind=engine)
         
         with Session(autoflush=False, bind=engine) as db:            
